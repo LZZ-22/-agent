@@ -1,0 +1,34 @@
+{
+  "name": "style-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "StyleAgent — 个人语言风格对话 Agent | AI 人文训练实习生作品集项目",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:setup": "npx tsx db/setup.ts",
+    "db:query": "npx tsx db/query.ts"
+  },
+  "dependencies": {
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.460.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.0",
+    "sql.js": "^1.14.1",
+    "tailwind-merge": "^2.6.0",
+    "tsx": "^4.22.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.8.0"
+  }
+}
