@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import type { WritingMessage } from "@/lib/types";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Send, Loader2, Bot, User, PenLine } from "lucide-react";
@@ -138,25 +137,28 @@ export function ChatZone({
       </div>
 
       {/* 输入区 */}
-      <div className="p-4 border-t border-[var(--color-border)] flex-shrink-0">
-        <div className="flex gap-3">
-          <Textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder={placeholder}
-            rows={2}
-            className="flex-1"
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                handleSend();
-              }
-            }}
-          />
+      <div className="p-3 border-t border-white/5 flex-shrink-0">
+        <div className="flex items-end gap-2">
+          <div className="flex-1">
+            <textarea
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder={placeholder}
+              rows={1}
+              className="w-full h-10 resize-none bg-white/[0.03] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white/90 placeholder:text-white/20 focus:outline-none focus:border-white/20 transition-colors"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSend();
+                }
+              }}
+              style={{ minHeight: "2.5rem", maxHeight: "6rem" }}
+            />
+          </div>
           <Button
             onClick={handleSend}
             disabled={loading || !input.trim()}
-            className="flex-shrink-0 self-end"
+            className="flex-shrink-0 h-10 w-10 p-0 bg-[var(--color-canary)] text-black hover:bg-white rounded-xl"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
           </Button>

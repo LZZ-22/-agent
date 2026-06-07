@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { saveConversation } from "@/lib/store";
@@ -60,7 +59,7 @@ export default function ChatPage() {
   const currentMode = MODES.find((m) => m.id === mode)!;
 
   return (
-    <div className="page-enter flex flex-col h-screen max-w-3xl mx-auto px-6">
+    <div className="page-enter flex flex-col h-screen max-w-5xl mx-auto px-6">
       {/* Header + Mode Tabs */}
       <div className="py-4 border-b border-white/5">
         <div className="flex items-center justify-between mb-3">
@@ -106,7 +105,7 @@ export default function ChatPage() {
                 <Bot className="h-4 w-4 text-white/50" />
               </div>
             )}
-            <Card className={`max-w-[80%] p-4 ${msg.role === "user" ? "bg-[var(--color-canary)]/10 border-[var(--color-canary)]/20 text-white/90" : "bg-white/[0.03] border-white/5"}`}>
+            <Card className={`max-w-[85%] p-4 ${msg.role === "user" ? "bg-[var(--color-canary)]/10 border-[var(--color-canary)]/20 text-white/90" : "bg-white/[0.03] border-white/5"}`}>
               <div className="text-sm whitespace-pre-wrap leading-relaxed">{msg.content}</div>
             </Card>
             {msg.role === "user" && (
@@ -131,18 +130,22 @@ export default function ChatPage() {
       </div>
 
       {/* Input */}
-      <div className="py-4 border-t border-white/5">
-        <div className="flex gap-3">
-          <Textarea
-            value={input} onChange={(e) => setInput(e.target.value)}
-            placeholder={currentMode.placeholder} rows={2} className="flex-1 bg-white/[0.03] border-white/10 text-white/90"
-            onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); } }}
-          />
-          <Button onClick={handleSend} disabled={loading || !input.trim()} className="flex-shrink-0 self-end bg-[var(--color-canary)] text-black hover:bg-white">
+      <div className="py-4 border-t border-white/5 px-2">
+        <div className="flex items-end gap-2.5">
+          <div className="flex-1 relative">
+            <textarea
+              value={input} onChange={(e) => setInput(e.target.value)}
+              placeholder={currentMode.placeholder} rows={1}
+              className="w-full h-11 resize-none bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white/90 placeholder:text-white/20 focus:outline-none focus:border-white/20 transition-colors"
+              onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); } }}
+              style={{ minHeight: "2.75rem", maxHeight: "8rem" }}
+            />
+          </div>
+          <Button onClick={handleSend} disabled={loading || !input.trim()} size="sm" className="flex-shrink-0 h-11 w-11 p-0 bg-[var(--color-canary)] text-black hover:bg-white rounded-xl">
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
           </Button>
         </div>
-        <p className="text-[10px] text-white/20 mt-2">Enter 发送 · Shift+Enter 换行 · 当前模式: {currentMode.label}</p>
+        <p className="text-[10px] text-white/20 mt-2 px-1">Enter 发送 · Shift+Enter 换行 · 当前模式: {currentMode.label}</p>
       </div>
     </div>
   );
