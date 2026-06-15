@@ -14,11 +14,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&family=Inter:wght@200;300;400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;700&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;600&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
+        <video className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none" autoPlay muted loop playsInline src="/home-bg.mp4" />
         <AppShell>{children}</AppShell>
       </body>
     </html>
