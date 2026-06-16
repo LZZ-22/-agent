@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <video className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none" autoPlay muted loop playsInline src="/home-bg.mp4" />
+        <video className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none" autoPlay muted loop playsInline src="https://github.com/LZZ-22/-agent/releases/download/v1.0-assets/home-bg.mp4" />
         <AppShell>{children}</AppShell>
       </body>
     </html>

@@ -5,3 +5,5 @@ dist/
 *.db
 *.db-journal
 public/*.mp4
+
+.vercel

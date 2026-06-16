@@ -38,7 +38,7 @@ export default function IntroAnimation({ onDone }: Props) {
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay muted loop playsInline
-        src="/intro-bg.mp4"
+        src="https://github.com/LZZ-22/-agent/releases/download/v1.0-assets/intro-bg.mp4"
       />
       {stage === "flash" && <div className="absolute inset-0 bg-white crt-flash" />}
       {/* 世界 — 左上角 */}
