@@ -35,7 +35,7 @@ export default function HomePage() {
 
       {/* ═══════ Hero ═══════ */}
       <section className="relative flex flex-col justify-center h-screen px-8 lg:px-20 py-24 overflow-hidden snap-start">
-        <video className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" autoPlay muted loop playsInline src="/home-bg.mp4" />
+        <video className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" autoPlay muted loop playsInline src="https://github.com/LZZ-22/-agent/releases/download/v1.0-assets/home-bg.mp4" />
         <div className="absolute inset-0 pointer-events-none z-[2]"
           style={{
             background: `
@@ -60,6 +60,7 @@ export default function HomePage() {
 
       {/* ═══════ 晚熟的果子 ═══════ */}
       <section id="modules" className="relative min-h-screen pt-20 pb-24 px-8 lg:px-20 flex flex-col justify-center overflow-hidden snap-start">
+        <video className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" autoPlay muted loop playsInline src="https://github.com/LZZ-22/-agent/releases/download/v1.0-assets/modules-bg.mp4" />
 <div className="relative z-10">
           <h2 className="font-serif text-3xl italic font-light text-white/80 tracking-wider mb-16 text-center lg:text-left">晚熟的果子</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-6xl mx-auto w-full">
@@ -84,6 +85,7 @@ export default function HomePage() {
 
       {/* ═══════ 进入空间 ═══════ */}
       <section className="relative min-h-screen overflow-hidden">
+        <video className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" autoPlay muted loop playsInline src="https://github.com/LZZ-22/-agent/releases/download/v1.0-assets/space-bg.mp4" />
 
 <div className="relative z-10">
           <SpaceContent />
